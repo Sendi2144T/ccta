@@ -3,6 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
+//----------------------------------------------------------------------------------------------------------------------------
+
+use App\Http\Controllers\HomeController;
+
+//---------------------------------------------------------------------------------------------------------------------------
+
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
@@ -10,6 +16,26 @@ Route::get('/', function () {
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
+
+//---------------------------------------------------------------------------------------------------------------------------
+
+    Route::get('/home', function () {
+    return view('home');
+})->name('home');
+
+Route::get('/absensi', function () {
+    return view('absensi');
+})->name('absensi');
+
+Route::get('/rekap', function () {
+    return view('rekap');
+})->name('rekap');
+
+Route::get('/histori', function () {
+    return view('histori');
+})->name('histori');
+
+//---------------------------------------------------------------------------------------------------------------------------
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
