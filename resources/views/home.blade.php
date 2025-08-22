@@ -11,5 +11,7 @@
   <a href="{{ route('rekap') }}">Rekap</a>
   <a href="{{ route('histori') }}">Histori</a>
   <h1>Welcome to the Home Page</h1>
+
+  
 </body>
 </html>
